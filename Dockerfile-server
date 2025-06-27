@@ -1,0 +1,13 @@
+# Use official Node.js image
+FROM node:18
+
+#Set working directory /ostad-server
+WORKDIR /ostad-server
+
+#Copy backend code from OstadServer/
+COPY OstadServer/ .
+
+#Install dependencies (npm install)
+RUN npm install
+EXPOSE 5050
+CMD ["npm", "start"]

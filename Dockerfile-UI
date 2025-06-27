@@ -1,0 +1,20 @@
+# Use the official Node.js image
+FROM node:18
+
+# Set the working directory inside the container
+WORKDIR /ostadui
+
+# Copy package files first for caching
+COPY OstadUI/package*.json ./
+
+# Install frontend dependencies
+RUN npm install
+
+# Copy the rest of the source code
+COPY OstadUI/ .
+
+# Expose Vite dev server port
+EXPOSE 5173
+
+# Run the Vite development server
+CMD ["npm", "run", "dev", "--", "--host"]

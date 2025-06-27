@@ -64,8 +64,6 @@ This will start the Vite development server, usually on `http://localhost:3000` 
 
 ---
 
-## Contact
-
 
 # Kubernetes YAML Descriptions
 
